@@ -1,0 +1,2 @@
+# CocoaLogToWebServer
+通过使用CocoaLumberjack 和GCDWebServer实现日志NSLog打印的重定向，并且可以使用浏览器访问日志
