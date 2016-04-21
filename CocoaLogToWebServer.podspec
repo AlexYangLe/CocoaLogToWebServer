@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
 
   s.author       = { "yanduhantan563" => "yanduhantan563@sina.com" }
-  s.source       = { :git => "https://github.com/yanduhantan563/CocoaLogToWebServer.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/yanduhantan563/CocoaLogToWebServer.git", :commit => "ebf02ee7068571b24453ede54a6d01ae02641c9b", :tag => "1.0.0" }
   s.requires_arc = true
   s.source_files = 'CocoaLogToWebServer/Classes/**/*'
   s.library = 'sqlite3', 'z', 'xml2'
