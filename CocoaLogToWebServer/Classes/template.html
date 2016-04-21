@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="mainCtrl">
+
+<button ng-click="refresh()">refresh</button>
+<div  style="background: #07242E; color: #708284;height: auto;overflow: auto;min-height: 600px;max-height:700px" >
+
+<ul>
+<li ng-repeat="x in items" style='font-size:15px'>
+    {{ x.logtime }} &nbsp; [{{x.level}}]-{{x.filename}}:{{x.line}}/{{x.function}} &nbsp;=> {{x.message}}
+</li>
+</ul>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+
+app.controller('mainCtrl', function($scope, $http) {
+    $http.get(location+'logs').success(function(response) {
+                                 $scope.items = response;
+                             });
+    $scope.refresh = function(){
+                    $http.get(location+'logs').success(function(response){
+                                                  $scope.items = response;
+                                              });
+    };
+});
+
+</script>
+</body>
+</html>
